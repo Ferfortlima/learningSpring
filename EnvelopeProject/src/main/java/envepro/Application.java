@@ -8,11 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 
 import java.sql.SQLException;
 import java.util.Arrays;
 
 @SpringBootApplication
+@EnableCaching
 public class Application implements CommandLineRunner {
 
     @Autowired
@@ -32,6 +34,7 @@ public class Application implements CommandLineRunner {
 
         Endereco enderecoa = new Endereco("a","a","a","a");
         Endereco enderecob = new Endereco("b","b","b","b");
+
 
 
         Pessoa pessoa = new Pessoa("nome", "11/11/1992","123123123");

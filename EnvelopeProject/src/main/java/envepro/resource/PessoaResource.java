@@ -26,4 +26,9 @@ public class PessoaResource {
     public Envelope insertPessoa(@RequestBody Pessoa pessoa) throws ListaValidationErrorsException {
         return new Envelope().setData(pessoaService.insertPessoa(pessoa));
     }
+
+    @GetMapping("listaPessoa")
+    public Envelope getPessoaById() throws MessageModuleException {
+        return new Envelope().setData(pessoaService.getAllPessoas());
+    }
 }

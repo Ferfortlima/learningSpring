@@ -8,10 +8,9 @@ import envepro.repository.PessoaRepository;
 import envepro.util.FormValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import javax.transaction.Transactional;
-import javax.validation.ConstraintViolation;
-import java.util.Arrays;
-import java.util.Set;
+import java.util.List;
 
 @Service
 @Transactional
@@ -32,5 +31,11 @@ public class PessoaService {
         formValidator.validate(pessoa);
 
         return pessoaRepository.save(pessoa);
+    }
+
+    public List<Pessoa> getAllPessoas() {
+
+        return pessoaRepository.findAll();
+
     }
 }

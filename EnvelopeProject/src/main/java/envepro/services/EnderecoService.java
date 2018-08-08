@@ -5,12 +5,12 @@ import envepro.exception.ListaValidationErrorsException;
 import envepro.exception.MessageModuleException;
 import envepro.model.Endereco;
 import envepro.repository.EnderecoRepository;
-import envepro.util.Envelope;
 import envepro.util.FormValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Transactional
@@ -32,4 +32,9 @@ public class EnderecoService {
 
         return enderecoRepository.save(endereco);
     }
+
+    public List<Endereco> getAllEndereco() {
+        return enderecoRepository.findAll();
+    }
+
 }
